@@ -101,7 +101,7 @@ public final class LoadingMessageSourceProvider
     /*
      * Executor service for loading tasks
      */
-    private final ExecutorService service
+    private ExecutorService service
         = Executors.newFixedThreadPool(NTHREADS, THREAD_FACTORY);
 
     /*
@@ -146,6 +146,14 @@ public final class LoadingMessageSourceProvider
          * Mimic an already enabled expiry if, in fact, there is none
          */
         expiryEnabled = new AtomicBoolean(expiryDuration == 0L);
+    }
+
+    public ExecutorService getService(){
+        return this.service;
+    }
+
+    public void setService(ExecutorService service){
+        this.service = service;
     }
 
     /**

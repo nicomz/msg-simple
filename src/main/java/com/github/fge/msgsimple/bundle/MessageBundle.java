@@ -78,6 +78,10 @@ public final class MessageBundle
         return new MessageBundleBuilder();
     }
 
+    public List<MessageSourceProvider> getProviders(){
+        return this.providers;
+    }
+
     /**
      * Convenience static factory method to create a bundle with a single
      * message source

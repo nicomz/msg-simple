@@ -60,6 +60,10 @@ public final class MessageBundles
     {
     }
 
+    public static  Map<Class<? extends MessageBundleLoader>, MessageBundle> getBundles(){
+        return BUNDLES;
+    }
+
     /**
      * Get a message bundle for a registered {@link MessageBundleLoader}
      * implementation
